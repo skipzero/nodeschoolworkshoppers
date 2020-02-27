@@ -4,13 +4,9 @@ const path = process.argv[2];
 
 const readDoc = (p) => {
   let breaks = 0;
-  const txtArr = fs.readFileSync(p, 'utf8', (err, data) => {
-    data = data.toString() //.split('\n');
-    console.log(typeof data)
-    // console.log(data)
-    return data;
-  });
-  console.log(typeof txtArr)
+  const file = fs.readFileSync(p);
+  const lines = file.toString().split('\n').length - 1;
+  console.log(lines)
 }
 
 readDoc(path);
